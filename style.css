@@ -8,9 +8,8 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: white;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   perspective: 1000px;
 }
 
