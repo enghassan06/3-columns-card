@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: white;
@@ -12,30 +13,36 @@ body {
   align-items: center;
   perspective: 1000px;
 }
+
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  min-height: 75%;
+  min-height: 75vh; /* ✅ التعديل الوحيد */
   width: 65%;
   border-radius: 10px;
   padding: 30px;
   gap: 0px;
   overflow: hidden;
 }
+
 .column-1 {
   background-color: #e28525;
 }
+
 .column-2 {
   background-color: #016972;
   border-radius: 0 !important;
 }
+
 .column-3 {
   background-color: #00403f;
   border-radius: 0 10px 10px 0 !important;
 }
+
 img {
   margin: 16px 0;
 }
+
 .column-1,
 .column-2,
 .column-3 {
@@ -43,12 +50,15 @@ img {
   height: 100%;
   border-radius: 10px 0 0px 10px;
 }
+
 .text {
   color: white;
 }
+
 h1 {
   margin: 20px 0 40px;
 }
+
 p {
   opacity: 0.8;
   line-height: 1.6;
@@ -56,6 +66,7 @@ p {
   margin-bottom: 20px;
   word-spacing: 3px;
 }
+
 .column-1 button,
 .column-2 button,
 .column-3 button {
@@ -67,24 +78,29 @@ p {
   margin: 30px 0 0 0;
   transition: 0.4s linear;
 }
+
 .column-1 button {
   color: #e28525;
 }
+
 .column-2 button {
   color: #016972;
 }
+
 .column-3 button {
   color: #00403f;
 }
+
 button:hover {
   background-color: transparent;
   color: white;
 }
+
 button:active {
-  transform: translate(5px, 5px);
   transform: scale(1.1);
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 }
+
 @media (max-width: 600px) {
   .container {
     grid-template-columns: 1fr;
