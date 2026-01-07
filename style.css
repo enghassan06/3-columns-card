@@ -1,3 +1,4 @@
+/* 1. Reset & Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,105 +7,86 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: white;
+  background-color: #f2f2f2; /* لون خلفية فاتح عشان الكروت تبان */
   min-height: 100vh;
   display: grid;
   place-items: center;
-  perspective: 1000px;
+  padding: 20px; /* مسافة أمان للموبايل */
 }
 
+/* 2. Container Style */
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  min-height: 75vh; /* ✅ التعديل الوحيد */
-  width: 65%;
-  border-radius: 10px;
-  padding: 30px;
-  gap: 0px;
-  overflow: hidden;
+  width: 100%;
+  max-width: 920px; /* العرض المثالي للتصميم ده */
+  border-radius: 15px;
+  overflow: hidden; /* عشان الحواف تتقص صح */
 }
 
-.column-1 {
-  background-color: #e28525;
-}
-
-.column-2 {
-  background-color: #016972;
-  border-radius: 0 !important;
-}
-
-.column-3 {
-  background-color: #00403f;
-  border-radius: 0 10px 10px 0 !important;
-}
-
-img {
-  margin: 16px 0;
-}
-
+/* 3. Common Column Styles */
 .column-1,
 .column-2,
 .column-3 {
-  padding: 28px 50px;
-  height: 100%;
-  border-radius: 10px 0 0px 10px;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: 0.3s;
 }
 
-.text {
-  color: white;
+.column-1 { background-color: #e28525; }
+.column-2 { background-color: #016972; }
+.column-3 { background-color: #00403f; }
+
+/* 4. Content Styles */
+img {
+  margin-bottom: 25px;
 }
 
 h1 {
-  margin: 20px 0 40px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 35px;
+  margin-bottom: 25px;
 }
 
 p {
-  opacity: 0.8;
-  line-height: 1.6;
-  font-size: 14px;
-  margin-bottom: 20px;
-  word-spacing: 3px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 40px;
+  flex-grow: 1; /* ✅ السطر السحري: بيزق الزرار لتحت مهما كان طول الكلام */
 }
 
-.column-1 button,
-.column-2 button,
-.column-3 button {
-  padding: 20px 40px;
+/* 5. Button Styles */
+button {
+  padding: 12px 30px;
   border-radius: 30px;
-  border: solid 1px white;
+  border: 2px solid white;
   background-color: white;
+  font-weight: 600;
   cursor: pointer;
-  margin: 30px 0 0 0;
-  transition: 0.4s linear;
+  transition: 0.3s ease;
 }
 
-.column-1 button {
-  color: #e28525;
-}
-
-.column-2 button {
-  color: #016972;
-}
-
-.column-3 button {
-  color: #00403f;
-}
+.column-1 button { color: #e28525; }
+.column-2 button { color: #016972; }
+.column-3 button { color: #00403f; }
 
 button:hover {
   background-color: transparent;
-  color: white;
+  color: white !important;
 }
 
-button:active {
-  transform: scale(1.1);
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 600px) {
+/* 6. Responsive Design */
+@media (max-width: 800px) {
   .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    overflow: visible;
-    width: 100%;
+    grid-template-columns: 1fr; /* يتحول لعمود واحد في الموبايل */
+    max-width: 450px;
   }
+  
+  /* تظبيط الحواف في الموبايل */
+  .column-1 { border-radius: 15px 15px 0 0; }
+  .column-3 { border-radius: 0 0 15px 15px; }
 }
